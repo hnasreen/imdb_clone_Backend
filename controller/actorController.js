@@ -1,6 +1,6 @@
 import Actor from '../model/actor.js';
 
-// Get all actors
+
 export const getAllActors = async (req, res) => {
     try {
         const actors = await Actor.find();
@@ -14,7 +14,7 @@ export const addActor = async (req, res) => {
     try {
         const { name, gender, dob, bio } = req.body;
         
-        // Create a new actor
+        
         const actor = new Actor({
             name,
             gender,
@@ -22,7 +22,7 @@ export const addActor = async (req, res) => {
             bio
         });
 
-        // Save to the database
+      
         const savedActor = await actor.save();
         res.status(201).json({ message: 'Actor added successfully', actor: savedActor });
     } catch (error) {
