@@ -20,8 +20,9 @@ export const getAllMovies = async(req,res)=>{
     }
 }
 export const addMovie = async(req,res)=>{
+//    const userid= req.user._id
     const { name, yearOfRelease, plot, poster, producers, actors } = req.body;
-    const movie = new Movie({ name, yearOfRelease, plot, poster, producers, actors });
+    const movie = new Movie({ name, yearOfRelease, plot, poster, producers, actors});
 
     try {
         const savedMovie = await movie.save();
